@@ -390,7 +390,7 @@ input::-webkit-inner-spin-button {
   font-size: 40px;
   text-align: center;
   padding-bottom: 64px;
-  color: #525252;
+  color: rgb(52, 51, 74);
   letter-spacing: 0.66px;
 }
 @media (max-width: 1260px) {
@@ -510,4 +510,55 @@ input::-webkit-inner-spin-button {
 .maincontent {
   position: relative;
   z-index: 2;
+}
+
+.about-info_title {
+  font-weight: 700;
+  font-size: 44px;
+  color: rgb(52, 51, 74);
+  letter-spacing: 0.68px;
+}
+.about-texts {
+  display: flex;
+  align-items: start;
+  justify-content: unset;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-info_subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(101, 104, 105);
+  width: 450px;
+  letter-spacing: 0.6px;
+  line-height: 24px;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.about-img {
+  width: 550px;
+}
+.about-span {
+  color: #1DB954;
+}
+.about-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #1DB954;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+  padding: 16px;
+  width: 170px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.about-link:hover {
+  opacity: 0.9;
 }/*# sourceMappingURL=Main.css.map */

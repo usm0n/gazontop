@@ -1,0 +1,52 @@
+.about {
+    &-info_title{
+        font-weight: 700;
+        font-size: 44px;
+        color: rgb(52 51 74);
+        letter-spacing: 0.68px;
+    }
+
+    &-texts{
+        @include flex(start, unset);
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &-info_subtitle{
+        font-weight: 500;
+        font-size: 18px;
+        color: rgb(101 104 105);
+        width: 450px;
+        letter-spacing: 0.60px;
+        line-height: 24px
+    }
+    &-content {
+        @include flex(center, space-between);
+        gap: 14px;
+    }
+
+    &-img {
+        width: 550px;
+    }
+
+    &-span{
+        color: $green;
+    }
+
+    &-link{
+        @include flex(center, center);
+        gap: 5px;
+        background-color: $green;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+        padding: 16px;
+        width: 170px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            opacity: 0.9;
+        }
+    }
+}
