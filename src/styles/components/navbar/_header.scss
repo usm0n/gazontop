@@ -1,0 +1,49 @@
+.header {
+    &-title {
+        font-weight: 700;
+        @include adaptive-value('font-size', 90, 40);
+        line-height: 100%;
+        color: #fff;
+        width: 900px;
+        text-align: center;
+
+        @media screen and (max-width: 900px){
+            width: 800px;
+        }
+
+        @media screen and (max-width: 785px){
+            width: 600px;
+        }
+
+        @media screen and (max-width: 425px){
+            width: 100%;
+        }
+    }
+
+    &-content {
+        @include flex(center, center);
+        height: 85vh;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &-color {
+        color: $green;
+        text-shadow: 0 2px 4px rgba(29, 185, 84, 0.5);
+    }
+
+    &-subtitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 161%;
+        text-align: center;
+        color: #ccc;
+        letter-spacing: 0.65px;
+    }
+
+    &-buttons{
+        @include flex(center, unset);
+        gap: 10px;
+    }
+
+}
