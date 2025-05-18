@@ -34,8 +34,7 @@ const Navbar = () => {
             <div className="nav-container">
                 <div className="nav-content">
                     <div className="nav-logo">
-                        <a href="/" >Logo</a>
-
+                        <Link to={'/'} className="nav-logo">Logo</Link>
                     </div>
                     <ul className={isOpen ? "nav-links show" : "nav-links"}>
                         <a href="/" className="nav-link">Bosh sahifa</a>

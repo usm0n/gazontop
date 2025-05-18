@@ -1,97 +1,127 @@
 import {
-    Box,
-    Button,
-    Typography,
-    Input,
-    FormControl,
-    FormLabel,
-    Link,
+  Box,
+  Button,
+  Typography,
+  Input,
+  FormControl,
+  FormLabel,
+  Link,
 } from '@mui/joy';
 import { useState } from 'react';
 import LoginNavbar from '../components/LoginNavbar';
 
 const Register = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleRegister = () => {
-        console.log({ name, email, password });
-    };
+  const handleRegister = () => {
+    console.log({ name, email, password });
+  };
 
-    return (
-        <>
-            <LoginNavbar />
-            <div className="container">
-                <Box
-                    sx={{
-                        height: '85vh',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Box
-                        sx={{
-                            width: 400,
-                            p: 4,
-                            borderRadius: 'md',
-                            boxShadow: 'lg',
-                            bgcolor: 'background.surface',
-                        }}
-                    >
-                        <Typography level="h4" textAlign="center" mb={2}>
-                            Ro‘yxatdan o‘tish
-                        </Typography>
+  return (
+    <>
+      <LoginNavbar />
+      <Box
+        sx={{
+          minHeight: '100vh',
+          backgroundColor: '#f5f5f5',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          px: 2,
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: 420,
+            p: 4,
+            borderRadius: '16px',
+            backgroundColor: '#ffffff',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+          }}
+        >
+          <Typography level="h3" fontWeight="bold" textAlign="center" mb={3} >
+            Ro‘yxatdan o‘tish
+          </Typography>
 
-                        <FormControl sx={{ mb: 2 }}>
-                            <FormLabel>Ism</FormLabel>
-                            <Input
-                                type="text"
-                                placeholder="Ismingiz"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                        </FormControl>
+          <FormControl sx={{ mb: 3 }}>
+            <FormLabel sx={{ color: 'neutral.700' }}>Ism</FormLabel>
+            <Input
+              placeholder="Ismingiz"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              sx={{
+                backgroundColor: '#f9f9f9',
+                '&::placeholder': { color: '#999' },
+                '&:hover': { borderColor: '#1DB954' },
+                '&:focus': { borderColor: '#1DB954' },
+              }}
+            />
+          </FormControl>
 
-                        <FormControl sx={{ mb: 2 }}>
-                            <FormLabel>Email</FormLabel>
-                            <Input
-                                type="email"
-                                placeholder="example@gmail.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </FormControl>
+          <FormControl sx={{ mb: 3 }}>
+            <FormLabel sx={{ color: 'neutral.700' }}>Email</FormLabel>
+            <Input
+              placeholder="example@gmail.com"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                backgroundColor: '#f9f9f9',
+                '&::placeholder': { color: '#999' },
+                '&:hover': { borderColor: '#1DB954' },
+                '&:focus': { borderColor: '#1DB954' },
+              }}
+            />
+          </FormControl>
 
-                        <FormControl sx={{ mb: 2 }}>
-                            <FormLabel>Parol</FormLabel>
-                            <Input
-                                type="password"
-                                placeholder="Parolingiz"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </FormControl>
+          <FormControl sx={{ mb: 3 }}>
+            <FormLabel sx={{ color: 'neutral.700' }}>Parol</FormLabel>
+            <Input
+              placeholder="Parolingiz"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              sx={{
+                backgroundColor: '#f9f9f9',
+                '&::placeholder': { color: '#999' },
+                '&:hover': { borderColor: '#1DB954' },
+                '&:focus': { borderColor: '#1DB954' },
+              }}
+            />
+          </FormControl>
 
-                        <Button fullWidth sx={{
-                            mt: 2,
-                            background: "#1DB954",
-                            '&:hover': {
-                                backgroundColor: '#1AAE4D',
-                            },
-                        }} onClick={handleRegister}>
-                            Ro‘yxatdan o‘tish
-                        </Button>
+          <Button
+            onClick={handleRegister}
+            fullWidth
+            sx={{
+              mt: 1,
+              backgroundColor: '#1DB954',
+              color: '#fff',
+              fontWeight: 600,
+              py: 1.5,
+              fontSize: '16px',
+              '&:hover': {
+                backgroundColor: '#17a44b',
+              },
+            }}
+          >
+            Ro‘yxatdan o‘tish
+          </Button>
 
-                        <Typography mt={2} textAlign="center">
-                            Hisobingiz bormi? <Link href="/login">Kirish</Link>
-                        </Typography>
-                    </Box>
-                </Box>
-            </div>
-        </>
-    );
+          <Typography mt={3} textAlign="center" fontSize="14px" >
+            Hisobingiz bormi?{' '}
+            <Link href="/login" sx={{ color: '#1DB954', fontWeight: 500 }}>
+              Kirish
+            </Link>
+          </Typography>
+        </Box>
+      </Box>
+    </>
+  );
 };
 
 export default Register;

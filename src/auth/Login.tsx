@@ -21,64 +21,87 @@ const Login = () => {
   return (
     <>
       <LoginNavbar />
-      <div className="container">
+      <Box
+        sx={{
+          minHeight: '90vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          px: 2,
+        }}
+      >
         <Box
           sx={{
-            height: '80vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            width: '100%',
+            maxWidth: 420,
+            p: 4,
+            borderRadius: 5,
+            boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.1)',
+            bgcolor: '#fff',
           }}
         >
-          <Box
+          <Typography level="h3" textAlign="center" fontWeight="bold" mb={3}>
+            Kirish
+          </Typography>
+
+          <FormControl sx={{ mb: 2 }}>
+            <FormLabel sx={{ fontWeight: 500 }}>Email</FormLabel>
+            <Input
+              type="email"
+              placeholder="example@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                height: 45,
+                fontSize: '16px',
+                '&::placeholder': {
+                  color: '#9e9e9e',
+                },
+              }}
+            />
+          </FormControl>
+
+          <FormControl sx={{ mb: 3 }}>
+            <FormLabel sx={{ fontWeight: 500 }}>Parol</FormLabel>
+            <Input
+              type="password"
+              placeholder="Parolingiz"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              sx={{
+                height: 45,
+                fontSize: '16px',
+                '&::placeholder': {
+                  color: '#9e9e9e',
+                },
+              }}
+            />
+          </FormControl>
+
+          <Button
+            fullWidth
+            onClick={handleLogin}
             sx={{
-              width: 400,
-              p: 4,
-              borderRadius: 'md',
-              boxShadow: 'lg',
-              bgcolor: 'background.surface',
-            }}
-          >
-            <Typography level="h4" textAlign="center" mb={2}>
-              Kirish
-            </Typography>
-
-            <FormControl>
-              <FormLabel>Email</FormLabel>
-              <Input
-                type="Email"
-                placeholder="example@gmail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </FormControl>
-
-            <FormControl sx={{ mt: 2 }}>
-              <FormLabel>Parol</FormLabel>
-              <Input
-                type="password"
-                placeholder="Parolingiz"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </FormControl>
-
-            <Button fullWidth sx={{
-              mt: 3, background: "#1DB954",
+              py: 1.5,
+              fontWeight: 600,
+              fontSize: '16px',
+              backgroundColor: '#1DB954',
               '&:hover': {
                 backgroundColor: '#1AAE4D',
               },
-            }} onClick={handleLogin}>
-              Kirish
-            </Button>
+            }}
+          >
+            Kirish
+          </Button>
 
-            <Typography mt={2} textAlign="center">
-              Hisobingiz yo‘qmi? <Link href="/register">Ro‘yxatdan o‘tish</Link>
-            </Typography>
-          </Box>
+          <Typography mt={3} textAlign="center" fontSize="14px">
+            Hisobingiz yo‘qmi?{' '}
+            <Link href="/register" sx={{ fontWeight: 500, color: '#1DB954' }}>
+              Ro‘yxatdan o‘tish
+            </Link>
+          </Typography>
         </Box>
-
-      </div>
+      </Box>
     </>
   );
 };

@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar"
 import Recommend from "../components/Recommend"
 import bgImage from '../assets/images/background.jpg'
 import About from "../components/About"
+import Contact from "../components/Contact"
+import Footer from "../components/Footer"
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
             <Header />
             <Recommend />
             <About/>
+            <Contact/>
+            <Footer/>
           </div>
         </div>
       </div>

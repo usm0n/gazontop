@@ -44,7 +44,7 @@
   &-login_content {
     @include flex(center, space-between);
     border-radius: 12px;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 11px 18px;
   }
 
