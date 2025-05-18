@@ -1,51 +1,85 @@
 .about {
-    &-info_title{
+    &-info_title {
         font-weight: 700;
-        font-size: 44px;
+        @include adaptive-value('font-size', 44, 33);
         color: rgb(52 51 74);
         letter-spacing: 0.68px;
+        width: 100%;
+
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+        }
     }
 
-    &-texts{
+    &-texts {
         @include flex(start, unset);
         flex-direction: column;
         gap: 20px;
+
+        @media screen and (max-width: 1000px) {
+            gap: 30px;
+        }
     }
 
-    &-info_subtitle{
+    &-info_subtitle {
         font-weight: 500;
-        font-size: 18px;
+        @include adaptive-value('font-size', 18, 15);
         color: rgb(101 104 105);
         width: 450px;
         letter-spacing: 0.60px;
-        line-height: 24px
+
+        line-height: 24px;
+
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 620px) {
+            width: 100%;
+        }
     }
+
     &-content {
         @include flex(center, space-between);
         gap: 14px;
+
+        @media screen and (max-width: 1000px) {
+            justify-content: center;
+        }
+
     }
 
     &-img {
-        width: 550px;
+        @include adaptive-value('width', 550, 350);
+
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
     }
 
-    &-span{
+    &-span {
         color: $green;
     }
 
-    &-link{
+    &-link {
         @include flex(center, center);
         gap: 5px;
         background-color: $green;
         color: #fff;
-        font-size: 18px;
+        @include adaptive-value('font-size', 18, 15);
         border-radius: 6px;
         padding: 16px;
         width: 170px;
         text-align: center;
         transition: all 0.2s ease-in-out;
 
-        &:hover{
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        &:hover {
             opacity: 0.9;
         }
     }

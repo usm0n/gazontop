@@ -346,11 +346,6 @@ input::-webkit-inner-spin-button {
 }
 @media screen and (max-width: 785px) {
   .header-title {
-    width: 600px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .header-title {
     width: 100%;
   }
 }
@@ -517,6 +512,17 @@ input::-webkit-inner-spin-button {
   font-size: 44px;
   color: rgb(52, 51, 74);
   letter-spacing: 0.68px;
+  width: 100%;
+}
+@media (max-width: 1260px) {
+  .about-info_title {
+    font-size: calc(33px + 11 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-info_title {
+    text-align: center;
+  }
 }
 .about-texts {
   display: flex;
@@ -524,6 +530,11 @@ input::-webkit-inner-spin-button {
   justify-content: unset;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .about-texts {
+    gap: 30px;
+  }
 }
 .about-info_subtitle {
   font-weight: 500;
@@ -533,14 +544,45 @@ input::-webkit-inner-spin-button {
   letter-spacing: 0.6px;
   line-height: 24px;
 }
+@media (max-width: 1260px) {
+  .about-info_subtitle {
+    font-size: calc(15px + 3 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-info_subtitle {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 620px) {
+  .about-info_subtitle {
+    width: 100%;
+  }
+}
 .about-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 }
+@media screen and (max-width: 1000px) {
+  .about-content {
+    justify-content: center;
+  }
+}
 .about-img {
   width: 550px;
+}
+@media (max-width: 1260px) {
+  .about-img {
+    width: calc(350px + 200 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-img {
+    display: none;
+  }
 }
 .about-span {
   color: #1DB954;
@@ -558,6 +600,17 @@ input::-webkit-inner-spin-button {
   width: 170px;
   text-align: center;
   transition: all 0.2s ease-in-out;
+}
+@media (max-width: 1260px) {
+  .about-link {
+    font-size: calc(15px + 3 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-link {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 .about-link:hover {
   opacity: 0.9;
