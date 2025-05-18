@@ -5,6 +5,7 @@ import axios from 'axios';
 const Contact = () => {
     const [error, setError] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('+998 ');
+    const token = process.env.REACT_APP_TELEGRAM_TOKEN;
 
     const handleInputChange = (e: any) => {
         let input = e.target.value.replace(/\D/g, '').substring(3);
@@ -35,7 +36,7 @@ const Contact = () => {
             return;
         }
         try {
-            const response = await axios.post('https://api.telegram.org/bot7875600450:AAHC5ke7RQqeWYBVirpuRnVuZ-5QvWT4VYQ/sendMessage', {
+            const response = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
                 chat_id: '5663095517',
                 text: `Yangi telefon raqam: ${phoneNumber}`,
             });
