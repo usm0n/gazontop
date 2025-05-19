@@ -23,7 +23,7 @@ const Footer = () => {
                         </Link>
 
                         <Link to={'/'}>
-                            <RiInstagramFill  className="footer-icon" />
+                            <RiInstagramFill className="footer-icon" />
                         </Link>
 
                         <Link to={'/'}>
