@@ -1,0 +1,43 @@
+.footer {
+
+    padding-bottom: 50px;
+
+    &-content {
+        @include flex(center, space-between);
+        gap: 14px;
+
+        @media screen and (max-width: 630px){
+            flex-direction: column;
+            gap: 20px   ;
+        }
+    }
+
+    &-title {
+        @include adaptive-value('font-size', 18, 14);
+        font-weight: 500;
+        color: #333;
+        width: 350px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 27px;
+
+        @media screen and (max-width: 420px){
+            width: 100%;
+        }
+    }
+
+    &-links{
+        @include adaptive-value('font-size', 25, 20);
+        @include flex(center, unset);
+        gap: 14px;
+    }
+
+    &-icon{
+        color: #000;
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            color: green;
+        }
+    }
+}

@@ -1,0 +1,252 @@
+.nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 10px 20px;
+
+  &-container {
+    position: relative;
+    max-width: 1260px;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(163, 163, 163, 0.63);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: -1;
+      border-radius: 12px;
+    }
+  }
+
+   &-login_container {
+    position: relative;
+    max-width: 1260px;
+    margin: 0 auto;
+
+  }
+
+  &.fixed {
+    position: fixed;
+  }
+
+  &-content {
+    @include flex(center, space-between);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 11px 18px;
+  }
+
+  &-login_content {
+    @include flex(center, space-between);
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 11px 18px;
+  }
+
+  &-links {
+    @include flex(center, unset);
+    gap: 15px;
+
+    @media screen and (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: $green;
+      width: 350px;
+      height: 100vh;
+      z-index: 99999;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateX(100%);
+      transition: all 0.2s ease-in-out;
+    }
+
+    &.show {
+      transform: translate(0);
+    }
+
+    @media screen and (max-width: 370px) {
+      width: 100%;
+    }
+  }
+
+  &-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(1px);
+    background-color: #00000069;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-menu {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &-menu_close {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    color: #fff;
+    font-size: 38px;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &-link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 154%;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: $green;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease, transform-origin 0s;
+    }
+
+    &:hover {
+      color: $green;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &:not(:hover)::after {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+
+   &-login_link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 154%;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: $green;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease, transform-origin 0s;
+    }
+
+    &:hover {
+      color: $green;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &:not(:hover)::after {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+
+  &-auth {
+    @include flex(center, unset);
+    gap: 12px;
+  }
+
+  &-signin {
+    font-weight: 500;
+    @include adaptive-value('font-size', 16, 14);
+    line-height: 150%;
+    color: #fff;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  &-user {
+    font-size: 22px;
+    display: none;
+
+    @media screen and (max-width: 400px) {
+      display: block;
+    }
+  }
+
+  &-signup {
+    border-radius: 8px;
+    padding: 12px 28px;
+    background: $green;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    @include adaptive-value('font-size', 16, 14);
+    line-height: 150%;
+    color: #fff;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+}
