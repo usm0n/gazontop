@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion'; // <-- framer-motion import qilindi
 import img from '../assets/images/contact.png';
 import axios from 'axios';
 
 const Contact = () => {
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('+998 ');
     const token = import.meta.env.VITE_TELEGRAM_TOKEN;
 
-    const handleInputChange = (e: any) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let input = e.target.value.replace(/\D/g, '').substring(3);
         let formattedNumber = '+998 ';
 
@@ -29,7 +30,7 @@ const Contact = () => {
         setPhoneNumber(formattedNumber);
     };
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (phoneNumber.length !== 19) {
             setError('Telefon raqami to\'liq formatda kiritilishi kerak.');
@@ -41,7 +42,7 @@ const Contact = () => {
                 text: `Yangi telefon raqam: ${phoneNumber}`,
             });
             console.log('Telegramga yuborildi', response);
-            setPhoneNumber('')
+            setPhoneNumber('');
             setError("Tez orada siz bilan bog'lanamiz");
         } catch (error) {
             console.error('Telegramga yuborishda xatolik yuz berdi:', error);
@@ -51,7 +52,14 @@ const Contact = () => {
     return (
         <section className="contact" id='contact'>
             <div className="container">
-                <div className="contact-content">
+                {/* Motion bilan o‘ralgan qism */}
+                <motion.div
+                    className="contact-content"
+                    initial={{ opacity: 0, y: 50 }}     
+                    whileInView={{ opacity: 1, y: 0 }}  
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    viewport={{ once: true }} 
+                >
                     <div className="contact-items">
                         <div className="contact-title_items">
                             <h3 className="contact-title">Hozir boshlang</h3>
@@ -80,10 +88,10 @@ const Contact = () => {
                     <div className="contact-image">
                         <img src={img} className='contact-img' alt="contact" />
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
-}
+};
 
 export default Contact;

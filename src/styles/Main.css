@@ -133,7 +133,7 @@ input::-webkit-inner-spin-button {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #1DB954;
+    background: rgb(16, 160, 16);
     width: 350px;
     height: 100vh;
     z-index: 99999;
@@ -184,6 +184,7 @@ input::-webkit-inner-spin-button {
   color: #fff;
   font-size: 38px;
   display: none;
+  background: transparent;
 }
 @media screen and (max-width: 768px) {
   .nav-menu_close {
@@ -289,6 +290,26 @@ input::-webkit-inner-spin-button {
 }
 @media screen and (max-width: 400px) {
   .nav-signin {
+    display: none;
+  }
+}
+.nav-login_signin {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 1260px) {
+  .nav-login_signin {
+    font-size: calc(14px + 2 * (100vw - 320px) / 940);
+  }
+}
+.nav-login_signin:hover {
+  color: #696969;
+}
+@media screen and (max-width: 400px) {
+  .nav-login_signin {
     display: none;
   }
 }
@@ -411,21 +432,22 @@ input::-webkit-inner-spin-button {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  cursor: text;
 }
-.recommend-card:hover {
-  transform: translateY(-20px);
-  cursor: pointer;
+.recommend-card:hover .recommend-card_img {
+  transform: scale(1.1);
+}
+.recommend-card_img {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.4s ease;
 }
 .recommend-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.recommend-img {
-  width: 100%;
-  height: 320px;
-  border-radius: 10px 10px 0 0;
 }
 .recommend-info {
   padding-top: 20px;
@@ -457,7 +479,7 @@ input::-webkit-inner-spin-button {
   opacity: 0.8;
 }
 .recommend-texts {
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
 }
 .recommend-name {
   font-weight: 500;
@@ -617,8 +639,7 @@ input::-webkit-inner-spin-button {
 }
 
 .contact {
-  margin: 120px 0;
-  padding-bottom: 120px;
+  margin: 150px 0;
 }
 .contact-content {
   border-radius: 35px 8px;
@@ -855,4 +876,22 @@ input::-webkit-inner-spin-button {
 }
 .footer-icon:hover {
   color: green;
+}
+
+.stadium {
+  padding-top: 50px;
+}
+.stadium-city {
+  text-align: center;
+}
+@media screen and (max-width: 410px) {
+  .stadium-card {
+    width: 100%;
+  }
+}
+.stadium-img {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.4s ease;
 }/*# sourceMappingURL=Main.css.map */
