@@ -1,6 +1,7 @@
 import Login from "../auth/Login";
 import Register from "../auth/Register";
 import StadiumDetails from "../components/StadiumDetails";
+import CityStadiums from "../pages/CityStadiums";
 import Home from "../pages/Home";
 
 export const routes = [
@@ -11,15 +12,20 @@ export const routes = [
 
     {
         path: "/stadium/:id",
-        element: <StadiumDetails/>
+        element: <StadiumDetails />
     },
     {
         path: '/login',
-        element: <Login/>
+        element: <Login />
     },
 
     {
         path: '/register',
-        element: <Register/>
+        element: <Register />
     },
+
+    {
+        path: "/city/:id",
+        element: <CityStadiums />
+    }
 ]

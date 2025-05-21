@@ -2,7 +2,7 @@
     margin-top: 200px;
     margin-bottom: 100px;
 
-    &-title{
+    &-title {
         font-weight: 700;
         @include adaptive-value('font-size', 40, 28);
         text-align: center;
@@ -10,13 +10,13 @@
         color: rgb(52 51 74);
         letter-spacing: 0.66px;
     }
-    
-    &-cards{
+
+    &-cards {
         @include flex(center, space-between);
         gap: 15px;
         flex-wrap: wrap;
 
-        @media screen and (max-width: 1180px){
+        @media screen and (max-width: 1180px) {
             justify-content: center;
         }
     }
@@ -27,22 +27,23 @@
         background-color: #fff;
         border-radius: 10px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+        cursor: text;
 
-        &:hover{
-            transform: translateY(-20px);
-            cursor: pointer
+        &:hover &_img {
+            transform: scale(1.1);
+        }
+
+        &_img {
+            width: 100%;
+            height: 320px;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.4s ease;
         }
     }
 
     &-items {
         @include flex(center, space-between);
-    }
-
-    &-img {
-        width: 100%;
-        height: 320px;
-        border-radius: 10px 10px 0 0;
     }
 
     &-info {
@@ -65,33 +66,34 @@
         text-align: center;
         transition: all 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             opacity: 0.8;
         }
     }
 
-    &-texts{
-        padding: 20px;
+    &-texts {
+        padding: 30px 20px 20px 20px;
     }
 
-    &-name{
+    &-name {
         font-weight: 500;
         font-size: 17px;
     }
 
-    &-price{
+    &-price {
         font-weight: 500;
         font-size: 17px;
     }
 
-    &-location{
+    &-location {
         font-weight: 500;
         font-size: 17px;
         @include flex(center, unset);
         gap: 10px;
+
     }
 
-    &-length{
+    &-length {
         font-weight: 500;
         font-size: 17px;
         @include flex(center, unset);

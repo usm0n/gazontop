@@ -34,7 +34,7 @@ const LoginNavbar = () => {
                     <div className="nav-auth">
                         <Link to={'/login'} className="nav-login_signin">Kirish</Link>
                         <Link to={'/register'} className="nav-signup">Ro'yxatdan o'tish</Link>
-                        <Link to={'#'} className="nav-user">
+                        <Link to={'/login'} className="nav-user">
                             <FaUserCircle />
                         </Link>
                         <button className="nav-menu" onClick={() => setIsOpen(true)}>
